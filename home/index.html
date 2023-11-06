@@ -30,12 +30,64 @@
     <main>
         <section class="row justify-content-end py-2 px-3" style="background-color: #3aafa9;">
             <div class="d-flex justify-content-end position-relative d-none d-md-block">
-                <form action="/your-chat-endpoint"><!-- Specify the action URL for your chat processing script -->
+                <form action="/your-chat-endpoint" class="d-flex">
+                    <!-- Specify the action URL for your chat processing script -->
                     <input type="text" placeholder="Send a message" name="message"
                         class="w-100 py-2 px-1 border-0 px-3 rounded-5" style="width: 150px; outline: none;">
                     <button class="search-button" type="submit">Gửi</button>
                 </form>
             </div>
+            <div class="chatbox" id="chatbox">
+                <!-- Hiển thị tin nhắn ở đây -->
+            </div>
+            <div class="d-flex">
+                <input type="text" id="messageInput" placeholder="Nhập tin nhắn">
+                <button onclick="sendMessage()">Gửi</button>
+            </div>
+
+
+        </section>
+        <section>
+
+            <body>
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Đăng nhập</h2>
+                            <form>
+                                <div class="form-group">
+                                    <label for="username">Tên đăng nhập:</label>
+                                    <input type="text" class="form-control" id="username"
+                                        placeholder="Nhập tên đăng nhập">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Mật khẩu:</label>
+                                    <input type="password" class="form-control" id="password"
+                                        placeholder="Nhập mật khẩu">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <h2>Đăng ký</h2>
+                            <form>
+                                <div class="form-group">
+                                    <label for="new-username">Tên đăng nhập:</label>
+                                    <input type="text" class="form-control" id="new-username"
+                                        placeholder="Nhập tên đăng nhập mới">
+                                </div>
+                                <div class="form-group">
+                                    <label for="new-password">Mật khẩu:</label>
+                                    <input type="password" class="form-control" id="new-password"
+                                        placeholder="Nhập mật khẩu mới">
+                                </div>
+                                <button type="submit" class="btn btn-success">Đăng ký</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sử dụng Bootstrap JS và Popper.js (đối với dropdowns và các plugin khác) -->
+            </body>
         </section>
         <!-- Add your chatbox content and messages here -->
     </main>
