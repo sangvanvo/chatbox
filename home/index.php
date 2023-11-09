@@ -54,7 +54,7 @@
                 <hr>
             </div>
         </div>
-        <div class="col-12 col-md-10">
+        <div class="col-12 col-md-8 col-xl-10">
             <div id="chatbox" class="">
                 <div class="card-body" id="chatboxBody">
                     <!-- Nội dung chatbox sẽ được hiển thị ở đây -->

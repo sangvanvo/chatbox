@@ -117,7 +117,7 @@ if (isset($_POST['dangky'])) {
         $(document).ready(function () {
             $('#signupForm').validate({
                 rules: {
-                    name: {
+                    ho_ten: {
                         required: true,
                         minlength: 1
                     },
@@ -125,7 +125,7 @@ if (isset($_POST['dangky'])) {
                         required: true,
                         email: true
                     },
-                    matkhau: {
+                    mat_khau: {
                         required: true,
                         minlength: 5
                     },
@@ -137,11 +137,11 @@ if (isset($_POST['dangky'])) {
 
                 },
                 messages: {
-                    name: {
+                    ho_ten: {
                         required: 'Bạn chưa nhập tên',
                         minlength: 'Tên phải có ít nhất 1 ký tự',
                     },
-                    matkhau: {
+                    mat_khau: {
                         required: 'Bạn chưa nhập mật khẩu',
                         minlength: 'Mật khẩu phải có ít nhất 5 ký tự',
                     },
@@ -174,10 +174,6 @@ if (isset($_POST['dangky'])) {
             });
         });
     </script>
-
-
-
-
 </body>
 
 </html>
