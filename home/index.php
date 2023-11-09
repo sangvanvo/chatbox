@@ -14,43 +14,48 @@
     <style>
         #chatboxBody {
             overflow-y: auto;
-            max-height: 78vh;
+            min-height: 93vh;
+            max-height: 93vh;
             /* Đặt chiều cao tối đa của chatboxBody */
         }
     </style>
 </head>
 
 <body class="container-fluid">
-    <header class="row p-4" style="background-color: aquamarine;">
-        <div class="d-flex gap-5 align-items-center">
-            <a href="#" class="text-decoration-none text-black fw-bold d-flex gap-1 align-items-center"><i
-                    class="fa fa-solid fa-house"></i>Trang
-                chủ</a>
-            <a href="#" class="text-decoration-none text-black fw-bold d-flex gap-1 align-items-center"><i
-                    class="fa fa-solid fa-user"></i>Đăng
-                nhập</a>
-            <a href="#" class="text-decoration-none text-black fw-bold d-flex gap-1 align-items-center"><i
-                    class="fas fa-user-plus"></i>Đăng ký</a>
-            <div class="offset-7">
-                <a href="#" class="text-decoration-none text-black fw-bold">
+    <main class="row">
+        <div class="col-12 col-md-2" style="height: 100vh; background-color: aquamarine;">
+            <div class="d-flex align-items-center gap-3 py-2">
+                <a href="/home/index.php" class="text-decoration-none text-white fw-bold"><i
+                        class="fa fa-solid fa-house"></i>Trang
+                    chủ</a>
+                <a href="/login/index.php" class="text-decoration-none text-white fw-bold"><i
+                        class="fa fa-solid fa-user"></i>Đăng
+                    nhập</a>
+
+            </div>
+
+            <div class="d-flex py-2">
+                <a href="/signup/index.php" class="text-decoration-none text-white fw-bold"><i
+                        class="fas fa-user-plus"></i>Đăng
+                    ký</a>
+            </div>
+
+            <div class="py-2">
+                <a href="/admin/index.php" class="text-decoration-none text-white fw-bold">
                     Trang quản trị
                 </a>
             </div>
-        </div>
-    </header>
-    <main class="row">
-        <div class="col-2" style="height: 100vh; background-color: aquamarine;">
-            <a href="" class="text-decoration-none fw-bold text-danger">ten nguoi dung</a>
+
+
             <hr>
             <div>
-                lich sữ tìm kiếm
+                <p>lich sữ tìm kiếm</p>
+                <button class="btn btn-dark">new</button>
+                <hr>
             </div>
         </div>
-        <div class="col-10">
+        <div class="col-12 col-md-10">
             <div id="chatbox" class="">
-                <div class="card-header text-center fw-bold">
-                    Chatbox
-                </div>
                 <div class="card-body" id="chatboxBody">
                     <!-- Nội dung chatbox sẽ được hiển thị ở đây -->
                 </div>
