@@ -4,94 +4,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbox</title>
+    <title>Tìm Việc Làm</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
-        /* Custom CSS for the "Gửi" button */
-        .search-button {
-            background-color: #dc3545;
-            /* Red background color */
-            color: #fff;
-            /* White text color */
-            border: none;
+        /* Custom CSS for chatbox */
+
+
+        .chatbox-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            height: 90%;
+            width: 70%;
+            /* Set width to half of the viewport width */
+            border-radius: 10px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chatbox-body {
+            padding: 10px;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .chat-input {
+            flex: 1;
+        }
+
+        .message {
+            display: flex;
+            margin: 10px 0;
+        }
+
+        .sent {
+            background-color: #007bff;
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+            padding: 10px;
             border-radius: 5px;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
+            max-width: 70%;
+        }
+
+        .received {
+            background-color: #f0f0f0;
+            align-self: flex-start;
+            margin-right: auto;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 70%;
         }
     </style>
 </head>
 
-<body class="container">
-    <header><!-- Add your header content here --></header>
+<body>
+
     <main>
-        <section class="row justify-content-end py-2 px-3" style="background-color: #3aafa9;">
-            <div class="d-flex justify-content-end position-relative d-none d-md-block">
-                <form action="/your-chat-endpoint" class="d-flex">
-                    <!-- Specify the action URL for your chat processing script -->
-                    <input type="text" placeholder="Send a message" name="message"
-                        class="w-100 py-2 px-1 border-0 px-3 rounded-5" style="width: 150px; outline: none;">
-                    <button class="search-button" type="submit">Gửi</button>
-                </form>
+        <div class="col-3 bg-white" style="height: 100vh;">
+            <div>
+                <a href=""><i class="fa fa-solid fa-house"></i> trang chủ</a>
+                <div class="bg-black">
+                    <a href=""> <i class="fa fa-solid fa-user"></i>đăng nhập</a>
+                    <a href=""><i class="fas fa-user-plus"></i>đăng ký</a>
+                </div>
+                <hr>
+                <div>
+                    <button class="btn btn-success" type="button" id="createButton">New chat</button>
+                </div>
             </div>
-            <div class="chatbox" id="chatbox">
-                <!-- Hiển thị tin nhắn ở đây -->
-            </div>
-            <div class="d-flex">
-                <input type="text" id="messageInput" placeholder="Nhập tin nhắn">
-                <button onclick="sendMessage()">Gửi</button>
-            </div>
-
-
-        </section>
-        <section>
-
-            <body>
-                <div class="container mt-5">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h2>Đăng nhập</h2>
-                            <form>
-                                <div class="form-group">
-                                    <label for="username">Tên đăng nhập:</label>
-                                    <input type="text" class="form-control" id="username"
-                                        placeholder="Nhập tên đăng nhập">
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Mật khẩu:</label>
-                                    <input type="password" class="form-control" id="password"
-                                        placeholder="Nhập mật khẩu">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Đăng nhập</button>
-                            </form>
+        </div>
+        <div class="container">
+            <div class=>
+                <div class="chatbox-container">
+                    <div class="chatbox-body">
+                        <div class="chatbox-body" id="message-list">
+                            <!-- Tin nhắn sẽ được thêm ở đây -->
                         </div>
-                        <div class="col-md-6">
-                            <h2>Đăng ký</h2>
-                            <form>
-                                <div class="form-group">
-                                    <label for="new-username">Tên đăng nhập:</label>
-                                    <input type="text" class="form-control" id="new-username"
-                                        placeholder="Nhập tên đăng nhập mới">
-                                </div>
-                                <div class="form-group">
-                                    <label for="new-password">Mật khẩu:</label>
-                                    <input type="password" class="form-control" id="new-password"
-                                        placeholder="Nhập mật khẩu mới">
-                                </div>
-                                <button type="submit" class="btn btn-success">Đăng ký</button>
-                            </form>
-                        </div>
+
+
+                    </div>
+
+                    <div class="search-bar">
+                        <input class="chat-input form-control" type="text" placeholder="Enter your message">
+                        <button class="send-button btn btn-primary"> <a href="#add">Gửi</a></button>
                     </div>
                 </div>
-                <!-- Sử dụng Bootstrap JS và Popper.js (đối với dropdowns và các plugin khác) -->
-            </body>
-        </section>
-        <!-- Add your chatbox content and messages here -->
+            </div>
+        </div>
     </main>
-    <footer><!-- Add your footer content here --></footer>
+
 </body>
+<script>
+    const messageList = document.getElementById("message-list");
+    const chatInput = document.querySelector(".chat-input");
+
+    // Hàm để gửi tin nhắn
+    function sendMessage() {
+        const messageText = chatInput.value;
+        addMessage("You", messageText);
+        chatInput.value = "";
+
+        // Tự động tạo một phản hồi từ người khác sau khi gửi tin nhắn
+        setTimeout(() => {
+            addMessage("John", "I have more     questions.");
+            scrollToBottom(); // Scroll to the bottom after adding a new message
+        }, 1000);
+    }
+
+    // Xử lý sự kiện khi người dùng ấn Enter
+    function handleChatInputKeyPress(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault(); // Prevent the newline character from being inserted
+            sendMessage();
+        }
+    }
+
+    // Hàm để thêm tin nhắn
+    function addMessage(sender, text) {
+        // Get the HTML element you want to add an id to
+
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add("message");
+
+        if (sender === "You") {
+            messageDiv.classList.add("sent");
+        } else {
+            messageDiv.classList.add("received");
+        }
+
+        messageDiv.innerHTML = `${sender}: ${text}`;
+        messageList.appendChild(messageDiv);
+        scrollToBottom();
+
+        // Add the id attribute to the element
+        messageList[messageList.le];
+        messageDiv.setAttribute("id", "add");
+
+    }
+
+    // Hàm để cuộn xuống dưới cùng của danh sách tin nhắn
+    function scrollToBottom() {
+        messageList.scrollTop = messageList.scrollHeight - messageList.clientHeight;
+    }
+
+    chatInput.addEventListener("keydown", handleChatInputKeyPress);
+
+    // Thêm một số tin nhắn mẫu ban đầu
+    addMessage("You", "Hello, how can I help you?");
+    addMessage("John", "I need information about your products.");
+
+</script>
+
+
+
+
 
 </html>
