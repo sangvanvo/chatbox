@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
 
     if ($ketqua) {
         $_SESSION['tenkhachhang'] = $ketqua['tenkhachhang'];
-        header("Location:index.php");
+        header("Location:chatbot.php");
     } else {
         echo '<script language="javascript">';
         echo 'alert("Tài khoản hoặc mật khẩu không đúng")';
@@ -27,14 +27,15 @@ if (isset($_POST['login'])) {
 <head>
     <meta charset="utf-8" />
     <title>Đăng nhập</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.7.28/dist/sweetalert2.min.css
 " rel="stylesheet">
 </head>
 
 <body>
-<?php
+    <?php
     include "../code/login.php";
     ?>
     <hr />
@@ -43,12 +44,14 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.28/dist/sweetalert2.min.css
     include "../code/footer.php";
     ?>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#signupForm').validate({
-                rules: {                    
+                rules: {
                     matkhau: {
                         required: true,
                         minlength: 5
@@ -66,7 +69,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.28/dist/sweetalert2.min.css
                     email: 'Hộp thư điện tử không hợp lệ',
                 },
                 errorElement: 'div',
-                errorPlacement: function(error, element) {
+                errorPlacement: function (error, element) {
                     error.addClass('invalid-feedback');
                     if (element.prop('type') === 'checkbox') {
                         error.insertAfter(element.siblings('label'));
@@ -74,12 +77,12 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.28/dist/sweetalert2.min.css
                         error.insertAfter(element);
                     }
                 },
-                highlight: function(element, errorClass, validClass) {
+                highlight: function (element, errorClass, validClass) {
                     $(element)
                         .addClass('is-invalid')
                         .removeClass('is-valid');
                 },
-                unhighlight: function(element, errorClass, validClass) {
+                unhighlight: function (element, errorClass, validClass) {
                     $(element)
                         .addClass('is-valid')
                         .removeClass('is-invalid');

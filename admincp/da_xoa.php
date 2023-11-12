@@ -14,13 +14,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['delete'])) {
-        $id = $_POST['id'];
-        $sql = "CALL xoavieclam('$id')";
-        $ketqua = $conn->prepare($sql);
-        $ketqua->execute();
-        header("Location:da_xoa.php");
+
+    try {
+        if (isset($_POST['delete'])) {
+            $id = $_POST['id'];
+            $sql = "CALL xoavieclam('$id')";
+            $ketqua = $conn->prepare($sql);
+            $ketqua->execute();
+            header("Location:da_xoa.php");
+        }
+    } catch (PDOException $e) {
+        echo "Lỗi SQL: " . $e->getMessage();
+        exit();
     }
+
 }
 ;
 ?>

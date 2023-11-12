@@ -25,6 +25,21 @@ $totalAbove10M = $resultTotalAbove10M->fetch(PDO::FETCH_ASSOC);
 $sqlTotalEqual1 = "SELECT CountValuesEqualTo1() as totalEqual1";
 $resultTotalEqual1 = $conn->query($sqlTotalEqual1);
 $totalEqual1 = $resultTotalEqual1->fetch(PDO::FETCH_ASSOC);
+
+$conn->beginTransaction();
+
+// Query to count the number of user accounts
+$sqlCountUsers = "SELECT COUNT(*) AS userCount FROM tbl_dangky_nguoitimviec";
+$stmtUser = $conn->query($sqlCountUsers);
+$userCount = $stmtUser->fetch(PDO::FETCH_ASSOC);
+
+// Query to count the number of employer accounts
+$sqlCountEmployers = "SELECT COUNT(*) AS employerCount FROM tbl_dangky_nhatuyendung";
+$stmtEmployer = $conn->query($sqlCountEmployers);
+$employerCount = $stmtEmployer->fetch(PDO::FETCH_ASSOC);
+
+// Commit the transaction
+$conn->commit();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,37 +76,75 @@ $totalEqual1 = $resultTotalEqual1->fetch(PDO::FETCH_ASSOC);
 
             <br><br>
             <div class="row">
-                <div class="fw-bold d-flex gap-2" style="font-size: 25px;">
-                    Số lượng công việc đã thêm:
-                    <p class="fw-bold text-success" style="font-size: 25px;">
+                <div class="fw-bold d-flex col-2 border border-3 border-black mx-2 p-1">
+                    <div class="row">
+                        <i class="fas fa-briefcase fa-3x"></i>
+                        <p style="font-size: 15px;"> Số lượng việc làm </p>
+                    </div>
+                    <p class="fw-bold text-success" style="font-size: 35px;">
                         <?php echo $totalJobs['totalJobs']; ?>
                     </p>
                 </div>
-                <div class="fw-bold d-flex gap-2" style="font-size: 25px;">
-                    Số lượng cử nhân:
-                    <p class="fw-bold text-success" style="font-size: 25px;">
+                <div class="fw-bold d-flex col-2 border border-3 border-black mx-2 p-1">
+                    <div class="row">
+                        <i class="fas fa-graduation-cap fa-3x"></i>
+                        <p style="font-size: 15px;"> Số lượng cử nhân:</p>
+                    </div>
+
+
+                    <p class="fw-bold text-success" style="font-size: 35px;">
                         <?php echo $totalBachelorDegrees['totalBachelorDegrees']; ?>
                     </p>
                 </div>
-                <div class="fw-bold d-flex gap-2" style="font-size: 25px;">
-                    Số lượng vị trí Nhân viên:
-                    <p class="fw-bold text-success" style="font-size: 25px;">
+                <div class="fw-bold d-flex col-2 border border-3 border-black mx-2 p-1">
+                    <div class="row">
+                        <i class="fas fa-user-tie fa-3x"></i>
+                        <p style="font-size: 15px;"> Số lượng vị trí Nhân viên:</p>
+                    </div>
+                    <p class="fw-bold text-success" style="font-size: 35px;">
                         <?php echo $totalEmployeePositions['totalEmployeePositions']; ?>
                     </p>
                 </div>
-                <div class="fw-bold d-flex gap-2" style="font-size: 25px;">
-                    Số lượng mức lương trên 10 triệu:
-                    <p class="fw-bold text-success" style="font-size: 25px;">
+                <div class="fw-bold d-flex col-2 border border-3 border-black mx-2 p-1">
+                    <div class="row">
+                        <i class="fas fa-money-bill-wave fa-3x"></i>
+                        <p style="font-size: 15px;">mức lương trên 10 triệu:</p>
+                    </div>
+                    <p class="fw-bold text-success" style="font-size: 35px;">
                         <?php echo $totalAbove10M['totalAbove10M']; ?>
                     </p>
                 </div>
-                <div class="fw-bold d-flex gap-2" style="font-size: 25px;">
-                    Số lượng chưa duyệt:
-                    <p class="fw-bold text-success" style="font-size: 25px;">
+                <div class="fw-bold d-flex col-2 border border-3 border-black mx-2 p-1">
+                    <div class="row">
+                        <i class="fa-solid fa-check fa-3x"></i>
+                        <p style="font-size: 15px;">Số lượng chưa duyệt:</p>
+                    </div>
+                    <p class="fw-bold text-success" style="font-size: 35px;">
                         <?php echo $totalEqual1['totalEqual1']; ?>
                     </p>
                 </div>
 
+
+            </div>
+            <div class="row mt-2">
+                <div class="fw-bold d-flex col-2 border border-3 border-black mx-2 p-1">
+                    <div class="row">
+                        <i class="fas fa-users fa-3x"></i>
+                        <p style="font-size: 15px;"> Số lượng người dùng:</p>
+                    </div>
+                    <p class="fw-bold text-success" style="font-size: 35px;">
+                        <?php echo $userCount['userCount']; ?>
+                    </p>
+                </div>
+                <div class="fw-bold d-flex col-2 border border-3 border-black mx-2 p-1">
+                    <div class="row">
+                        <i class="fas fa-building fa-3x"></i>
+                        <p style="font-size: 15px;"> Số lượng nhà tuyển dụng:</p>
+                    </div>
+                    <p class="fw-bold text-success" style="font-size: 35px;">
+                        <?php echo $employerCount['employerCount']; ?>
+                    </p>
+                </div>
             </div>
         </div>
     </main>

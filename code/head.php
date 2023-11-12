@@ -19,7 +19,7 @@
                 class="fa-solid fa-magnifying-glass text-success"></i>Tìm kiếm</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../pages/login.php"><i
+            <a class="nav-link active" aria-current="page" href="../pages/chatbot.php"><i
                 class="fa-solid fa-comment text-success"></i>Chatbot</a>
           </li>
 

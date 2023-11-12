@@ -2,6 +2,10 @@
 session_start();
 include('config/config.php');
 $ketqua = [];
+if (empty($_SESSION['tenkhachhang'])) {
+    header('Location:login.php');
+    exit();
+}
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if (isset($_GET['button'])) {
         $noidung1 = $_GET['1'];
@@ -13,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         $ketqua = $ketqua->fetchAll(PDO::FETCH_ASSOC);
     }
+
 }
 
 
