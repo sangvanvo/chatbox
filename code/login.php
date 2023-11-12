@@ -39,7 +39,6 @@
                             <button type="submit" class="btn btn-primary" name="login">Đăng nhập</button>
                         </div>
 
-                        <div class="text-center"><a href="">Quên mật khẩu</a></div>
                         <div class="text-center">Nếu chưa có tài khoản vui lòng <a href="register.php">Đăng kí</a></div>
 
                     </form>

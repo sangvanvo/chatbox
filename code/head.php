@@ -23,14 +23,13 @@
                 class="fa-solid fa-comment text-success"></i>Chatbot</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../admincp/login.php">Admin </a>
-          </li>
-
 
         </ul>
 
+
+
         <div class="d-flex align-items-center">
+
           <?php
           if ((isset($_SESSION['tenkhachhang'])) || (isset($_SESSION['tencongty']))) {
             if ((isset($_SESSION['tenkhachhang']))) {
@@ -46,6 +45,11 @@
             echo '<div><a class="text-decoration-none text-dark ms-3 " href="nhatuyendung/login.php"><i class="fa-solid fa-building text-success"></i>Nhà tuyển dụng</a></div>';
           }
           ?>
+        </div>
+        <div class="d-flex mx-3">
+          <a class="nav-link active" aria-current="page" href="../admincp/login.php"><i
+              class="fa-solid fa-user-gear text-success"></i>
+            Người quản trị</a>
         </div>
       </div>
     </div>
