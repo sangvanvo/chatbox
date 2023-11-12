@@ -7,7 +7,7 @@ if (isset($_POST['signup'])) {
     $sql = "SELECT * FROM tbl_admin WHERE username='" . $taikhoan . "' AND password='" . $matkhau . "' LIMIT 1";
     $stmt = $conn->prepare($sql);
     $ketqua = $stmt->fetch(PDO::FETCH_ASSOC);
-
+    var_dump($ketqua);
     header("Location:index.php");
 
 }
@@ -62,11 +62,14 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.28/dist/sweetalert2.min.css
                             </div>
 
 
-                            <div class="row p-2">
+                            <div class="row p-2 d-flex gap-2">
                                 <div class="col-sm-5 offset-sm-4">
                                     <button type="submit" class="btn btn-primary" name="signup" value="Sign up">
                                         Đăng nhập
                                     </button>
+                                </div>
+                                <div class="col-sm-5 offset-sm-4">
+                                    <a href="registeradmin.php" class="btn btn-primary">Đăng Ký</a>
                                 </div>
                             </div>
                         </form>

@@ -28,17 +28,16 @@ $totalEqual1 = $resultTotalEqual1->fetch(PDO::FETCH_ASSOC);
 
 $conn->beginTransaction();
 
-// Query to count the number of user accounts
 $sqlCountUsers = "SELECT COUNT(*) AS userCount FROM tbl_dangky_nguoitimviec";
 $stmtUser = $conn->query($sqlCountUsers);
 $userCount = $stmtUser->fetch(PDO::FETCH_ASSOC);
 
-// Query to count the number of employer accounts
+
 $sqlCountEmployers = "SELECT COUNT(*) AS employerCount FROM tbl_dangky_nhatuyendung";
 $stmtEmployer = $conn->query($sqlCountEmployers);
 $employerCount = $stmtEmployer->fetch(PDO::FETCH_ASSOC);
 
-// Commit the transaction
+
 $conn->commit();
 ?>
 <!DOCTYPE html>

@@ -17,7 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         $ketqua = $ketqua->fetchAll(PDO::FETCH_ASSOC);
     }
-
 }
 
 
@@ -105,30 +104,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 </div>
             </form>
         </div>
-        <div class="row mt-2">
+        <div class="row">
 
             <div class="col-10 col-md-10 offset-1">
                 <?php foreach ($ketqua as $cty): ?>
 
                     <div class="row">
                         <div class="border text-body mt-4" style="background-color: #f8f9fa;">
-                            <div class="h5 ms-2 me-2 mt-2">Về lĩnh vực
+                            <div class="h5 ms-2 me-2 mt-2 fw-bold" style="font-size: 30px;">Về lĩnh vực
                                 <?= $cty['linh_vuc'] ?>
                             </div>
-                            <div class="ms-2 me-2 mb-2"><a class="text-decoration-none text-dark ">
+                            <div class="ms-2 me-2 mb-2"><a class="text-decoration-none text-dark fw-bold">
                                     <?= $cty['su_nghiep'] ?>
                                 </a></div>
                         </div>
                         <div class="border text-body mt-4" style="background-color: #f8f9fa;">
-                            <div class="h5 ms-2 me-2 mt-2">Các khóa học mà bạn nên thử khi chọn
+                            <div class="h5 ms-2 me-2 mt-2 fw-bold" style="font-size: 30px;">Các khóa học mà bạn nên thử khi
+                                chọn
                                 <?= $cty['linh_vuc'] ?>
                             </div>
-                            <div class="ms-2 me-2 mb-2"><a class="text-decoration-none text-dark ">
+                            <div class="ms-2 me-2 mb-2"><a class="text-decoration-none text-success fw-bold ">
                                     <?= $cty['khoa_hoc'] ?>
                                 </a></div>
                         </div>
                         <div class="border text-body mt-4" style="background-color: #f8f9fa;">
-                            <div class="h5 ms-2 me-2 mt-2">Lời khuyên của chúng tôi gửi đến bạn khi chọn
+                            <div class="h5 ms-2 me-2 mt-2 fw-bold" style="font-size: 30px;">Lời khuyên của chúng tôi gửi đến
+                                bạn khi chọn
                                 <?= $cty['linh_vuc'] ?>
                             </div>
                             <div class="ms-2 me-2 mb-2"><a class="text-decoration-none text-dark">

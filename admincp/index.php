@@ -51,7 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="btn btn-primary"><a href="thongke.php" class="text-decoration-none fw-bold text-white">Thống
                     kê</a></div>
-
             <br><br>
 
             <!-- Bảng hiển thị Thành viên -->
