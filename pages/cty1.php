@@ -99,13 +99,13 @@ $ketqua = $ketqua->fetchAll(PDO::FETCH_ASSOC);
           </div>
           <h4 class="text-primary  ms-2">Việc đang tuyển</h4>
 
-          <div class="border bg-body text-body">
+          <div class="d-flex justify-content-center p-3">
             <div class="row">
-              <div class=" col-sm-6 col-md-2" style="display: grid; place-items: center;">
+              <div class=" col-sm-6 col-md-3" style="display: grid; place-items: center;">
                 <img class="img-fluid hot-job__logo img-thumbnail mr-2 mr-sm-3 border-0 bg-white"
                   src="<?= $cty['images'] ?>" />
               </div>
-              <div class="col-sm-6 col-md-10 ">
+              <div class="col-sm-6 col-md-9">
                 <div class="" style="padding-top:10px"><a class="text-decoration-none text-dark h5 fw-bold " href="">
                     <?= $cty['vitri_tuyendung'] ?>
                   </a></div>

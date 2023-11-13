@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="">
             <h1>Trang quản trị</h1>
             <div class="py-2"><a class="text-decoration-none fw-bold text-dark" href="../pages/index.php"><i
-                        class="fa-solid fa-house text-success"></i>Trang chủ</a></div>
+                        class="fa-solid fa-house text-success fa-2x"></i>Trang chủ</a></div>
             <div class="btn btn-primary"><a href="index.php" class="text-decoration-none fw-bold text-white">
                     Trang quản trị</a></div>
             <div class="btn btn-primary"><a href="addadmin.php" class="text-decoration-none fw-bold text-white">Thêm

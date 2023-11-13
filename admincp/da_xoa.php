@@ -43,15 +43,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>dx</title>
+    <title>DM_CV_CTY</title>
 </head>
 
 <body class="container-fluid">
     <main class="row">
         <div class="">
-            <h1>Trang quản lý danh mục công việc</h1>
+            <h1>Trang quản lý danh mục công việc CTY</h1>
             <div class="py-2"><a class="text-decoration-none fw-bold text-dark" href="../pages/index.php"><i
-                        class="fa-solid fa-house text-success"></i>Trang chủ</a></div>
+                        class="fa-solid fa-house text-success fa-2x"></i>Trang chủ</a></div>
             <div class="btn btn-primary"><a href="index.php" class="text-decoration-none fw-bold text-white">
                     Trang quản trị</a></div>
             <div class="btn btn-primary"><a href="addadmin.php" class="text-decoration-none fw-bold text-white">Thêm
@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             value="Xóa"><input type="hidden" name="id"
                                             value="<?= $cty['id_thongtintuyendung'] ?>"></form>
                                     <form method="POST"><input type="submit" name="submit" class="btn btn-success my-1"
-                                            value="Thêm lại"><input type="hidden" name="id"
+                                            value="Duyệt"><input type="hidden" name="id"
                                             value="<?= $cty['id_thongtintuyendung'] ?>"></form>
 
                                 </th>
