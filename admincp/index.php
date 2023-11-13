@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     việc</a></div>
 
             <div class="btn btn-primary"><a href="da_xoa.php"
-                    class="text-decoration-none fw-bold text-white">Duyệt_xóa</a>
+                    class="text-decoration-none fw-bold text-white">Duyệt_Xóa</a>
             </div>
             <div class="btn btn-primary"><a href="thongke.php" class="text-decoration-none fw-bold text-white">Thống
                     kê</a></div>
@@ -91,8 +91,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <th class="">
                                     <a href="chinhsu.php?id=<?= $cty['id_thongtintuyendung'] ?>" class="btn btn-success">sửa
                                     </a>
-                                    <form method="POST"><input type="submit" name="delete" class="btn btn-danger"
-                                            value="Xóa"><input type="hidden" name="id"
+                                    <form method="POST"><input type="submit" name="delete" class="btn btn-danger my-1"
+                                            value="Thu hồi"><input type="hidden" name="id"
                                             value="<?= $cty['id_thongtintuyendung'] ?>"></form>
                                 </th>
                             </tr>

@@ -40,11 +40,14 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.28/dist/sweetalert2.min.css
             <div class="col-sm-6 col-md-4 d-flex align-items-center">
                 <img class=" img-fluid" src="https://dxwd4tssreb4w.cloudfront.net/web/images/pages/login/banner.png"
                     alt="">
+
             </div>
             <div class="col-sm-6 col-md-4">
 
                 <div class="card">
                     <div class="card-header text-center position-relative alert alert-info">
+                        <a href="../../pages/index.php"><button type="button" class="btn-close offset-11"
+                                aria-label="Close"></button></a>
                         <h3>Thêm đăng tuyển dụng</h3>
                     </div>
 

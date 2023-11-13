@@ -68,7 +68,7 @@ $conn->commit();
                     việc</a></div>
 
             <div class="btn btn-primary"><a href="da_xoa.php"
-                    class="text-decoration-none fw-bold text-white">Duyệt_xóa</a>
+                    class="text-decoration-none fw-bold text-white">Duyệt_Xóa</a>
             </div>
             <div class="btn btn-primary"><a href="thongke.php" class="text-decoration-none fw-bold text-white">Thống
                     kê</a></div>

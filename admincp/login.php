@@ -4,15 +4,20 @@ include('../pages/config/config.php');
 if (isset($_POST['signup'])) {
     $taikhoan = $_POST['email'];
     $matkhau = md5($_POST['password']);
-    $sql = "SELECT * FROM tbl_admin WHERE username='" . $taikhoan . "' AND password='" . $matkhau . "' LIMIT 1";
-    $stmt = $conn->prepare($sql);
-    $ketqua = $stmt->fetch(PDO::FETCH_ASSOC);
-    var_dump($ketqua);
-    header("Location:index.php");
-
+    $sql = "SELECT * FROM tbl_admin WHERE username=? and password=? LIMIT 1";
+    $ketqua = $conn->prepare($sql);
+    $ketqua->execute([$taikhoan, $matkhau]);
+    $ketqua = $ketqua->fetch(PDO::FETCH_ASSOC);
+    if ($ketqua) {
+        header("Location:index.php");
+    } else {
+        echo '<script language="javascript">';
+        echo 'alert("Email hoặc mật khẩu không đúng")';
+        echo '</script>';
+    }
 }
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +44,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.28/dist/sweetalert2.min.css
 
                 <div class="card">
                     <div class="card-header text-center">
-                        <a href="index.html"><button type="button" class="btn-close offset-11"
+                        <a href="../pages/index.php"><button type="button" class="btn-close offset-11"
                                 aria-label="Close"></button></a>
                         <h3>Đăng nhập</h3>
                     </div>

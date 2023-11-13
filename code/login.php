@@ -9,8 +9,8 @@
 
             <div class="card">
                 <div class="card-header text-center bg-secondary-subtle text-emphasis-secondary">
-                    <a href="index.php"><button type="button" class="btn-close position-absolute top-0 end-0 p-3"
-                            aria-label="Close"></button></a>
+                    <a href="http://chatbot467.localhost/pages/index.php"><button type="button"
+                            class="btn-close position-absolute top-0 end-0 p-3" aria-label="Close"></button></a>
                     <h3>Đăng nhập</h3>
                 </div>
                 <div class="card-body ">
