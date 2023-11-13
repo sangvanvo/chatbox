@@ -68,9 +68,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.28/dist/sweetalert2.min.css
                                         Đăng nhập
                                     </button>
                                 </div>
-                                <div class="col-sm-5 offset-sm-4">
+                                <!-- <div class="col-sm-5 offset-sm-4">
                                     <a href="registeradmin.php" class="btn btn-primary">Đăng Ký</a>
-                                </div>
+                                </div> -->
                             </div>
                         </form>
                     </div>
