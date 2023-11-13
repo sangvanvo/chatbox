@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/NiceJob.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -43,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         <div class="">
             <nav class="navbar navbar-expand-lg">
                 <div class="container border-bottom">
-                    <a class="navbar-brand fw-bold" style="color:red">Hỗ trợ việc làm</a>
+                    <img src="../pages/images/NiceJob.png" alt="" style="height: 100px;">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -58,19 +59,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="login.php"><i
+                                <a class="nav-link active" aria-current="page" href="nganhnghe.php"><i
                                         class="fa-solid fa-magnifying-glass text-success"></i>Tìm kiếm</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="chatbot.php"><i
+                                <a class="nav-link active" aria-current="page" href="../pages/chatbot.php"><i
                                         class="fa-solid fa-comment text-success"></i>Chatbot</a>
                             </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="../admincp/login.php">Admin </a>
-                            </li>
-
-
                         </ul>
 
                         <div class="d-flex align-items-center">

@@ -41,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     <div class="container">
       <nav class="navbar navbar-expand-lg">
 
+        <img src="../pages/images/NiceJob.png" alt="" style="height: 100px;">
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,16 +54,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
               <a class="nav-link active" aria-current="page" href="index.php"><i
                   class="fa-solid fa-house text-success"></i>Trang chủ</a>
             </li>
-
             <li class="nav-item">
-              <form method="GET" class="d-flex justify-content-center">
-                <input type="text" name="1" placeholder="Ngành nghề ">
-                <input type="text" name="2" placeholder="Vị trí công Ty">
-                <input type="text" name="3" placeholder="Mức lương">
-                <input type="text" name="4" placeholder="Trình độ">
-                <button class="btn btn-dark rounded-1" type="submit" name="button">Tìm</button>
-              </form>
+              <a class="nav-link active" aria-current="page" href="nganhnghe.php"><i
+                  class="fa-solid fa-magnifying-glass text-success"></i>Tìm kiếm</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../pages/chatbot.php"><i
+                  class="fa-solid fa-comment text-success"></i>Chatbot</a>
+            </li>
+
             <!-- <li class="nav-item ms-3">
               <form method="GET">
                 <input type="text" name="khuvuc" placeholder="Địa điểm">
@@ -148,16 +148,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 echo "<span class='text-capitalize fw-bold' style='color:red'>" . $_SESSION['tenkhachhang'] . "</span>";
               } else {
                 echo "<span class='text-capitalize fw-bold' style='color:red'>" . $_SESSION['tencongty'] . " </span>";
-                echo '<span><a class="text-decoration-none text-dark ms-3" href="">Đăng tin tuyển dụng</a></span>';
+                echo '<span><a class="text-decoration-none text-dark ms-3" href="nhatuyendung/post_info.php"><i class="fa-regular fa-paste text-success"></i>Đăng tin tuyển dụng</a></span>';
               }
 
-              echo '<span><a class="text-decoration-none text-dark ms-3" href="logout.php">Đăng xuất</a></span>';
+              echo '<span><a class="text-decoration-none text-dark ms-3" href="logout.php"><i class="fa-solid fa-right-from-bracket text-success"></i>Đăng xuất</a></span>';
             } else {
               echo '<div><a class="text-decoration-none text-dark " href="login.php"><i class="fa-solid fa-user text-success"></i> Người tìm việc</a></div>';
               echo '<div><a class="text-decoration-none text-dark ms-3 " href="nhatuyendung/login.php"><i class="fa-solid fa-building text-success"></i>Nhà tuyển dụng</a></div>';
             }
             ?>
-            </button>
           </div>
         </div>
     </div>
@@ -166,7 +165,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
 
 
-
+  <form method="GET" class="d-flex justify-content-center">
+    <input type="text" name="1" placeholder="Ngành nghề " class="me-1">
+    <input type="text" name="2" placeholder="Vị trí công Ty" class="me-1">
+    <input type="text" name="3" placeholder="Mức lương" class="me-1">
+    <input type="text" name="4" placeholder="Trình độ" class="me-1">
+    <button class="btn btn-success rounded-1" type="submit" name="button">Tìm</button>
+  </form>
 
 
 
